@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- PROPERTIES (TODAS PRIMEIRO) -->
+        <property name="hibernate.connection.driver_class">org.h2.Driver</property>
+        <property name="hibernate.connection.url">jdbc:h2:mem:oficina_db;DB_CLOSE_DELAY=-1</property>
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.h2.console.enabled">true</property>
+        <property name="hibernate.connection.url">
+            jdbc:h2:mem:oficina_db;DB_CLOSE_DELAY=-1;MODE=MYSQL
+        </property>
+        <property name="hibernate.connection.url">
+            jdbc:h2:mem:oficina_db;DB_CLOSE_DELAY=-1;MODE=MYSQL
+        </property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
+
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="hbm2ddl.auto">create-drop</property>
+
+        <!-- MAPPINGS (SÓ DEPOIS DAS PROPERTIES) -->
+        <mapping class="org.oficina.som.Cliente"/>
+        <mapping class="org.oficina.som.Veiculo"/>
+        <mapping class="org.oficina.som.OrdemServico"/>
+        <mapping class="org.oficina.som.Componente"/>
+        <mapping class="org.oficina.som.OrdemServicoComponente"/>
+
+        <!-- NÃO incluir classes @Embeddable -->
+        <!-- <mapping class="org.oficina.som.OrdemServicoComponenteId"/> -->
+
+    </session-factory>
+</hibernate-configuration>
